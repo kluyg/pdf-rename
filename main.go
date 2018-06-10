@@ -10,6 +10,7 @@ import (
 	"fmt"
 	"os"
 
+	_ "github.com/kluyg/pdf-rename/internal/license"
 	"github.com/unidoc/unidoc/pdf/extractor"
 	pdf "github.com/unidoc/unidoc/pdf/model"
 )
@@ -19,20 +20,6 @@ func main() {
 		fmt.Printf("Usage: go run pdf_extract_text.go input.pdf\n")
 		os.Exit(1)
 	}
-
-	// Make sure to enter a valid license key.
-	// Otherwise text is truncated and a watermark added to the text.
-	// License keys are available via: https://unidoc.io
-	/*
-			license.SetLicenseKey(`
-		-----BEGIN UNIDOC LICENSE KEY-----
-		...key contents...
-		-----END UNIDOC LICENSE KEY-----
-		`)
-	*/
-
-	// For debugging.
-	// common.SetLogger(common.NewConsoleLogger(common.LogLevelDebug))
 
 	inputPath := os.Args[1]
 
